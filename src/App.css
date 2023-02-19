@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-bg)
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+/* To create the gradient, we are using angrytools.com/gradient/ (Angry Tools)
+    ~adjust the angrytools/gradient/ page in center and click on the yellow adjusting bubble
+    go to the HEXA after that & remove color code & put the require color code which is in our case
+    is 'Navy Blue' color code to use in HEXA input box is '002853'. color will change
+    
+    ~next click on the middle adjusting bubble & click delete button & then click on the right adjusting
+    bubble and come on the HEXA and enter the hexadecimal color code which is '040C18' which convert the gradient page
+    dark color...
+    
+    ~in the next step we just move from the linear to Radial, it will convert small circle watch look things
+    into the square box. where we put the value of X : 3% ; Y : 25%. After following all this step
+    the angry tool site give us a perfect background gredient code... which will help to build the web;
+    copy the givan code & paste it in your css file... 
+     your code will be pasted  .gradient__bg{...}  <= like this code*/
+
+     .gradient__bg {
+     
+         /* ff 3.6+ */
+         background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+     
+         /* safari 5.1+,chrome 10+ */
+         background:-webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+     
+         /* opera 11.10+ */
+         background:-o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+     
+         /* ie 10+ */
+         background:-ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+     
+         /* global 92%+ browsers support */
+         background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+     
+     }
+
+
+     .gradient__text {
+        background: var(--gradient-text);
+        background-clip: text;
+        -webkit-background-clop: text;
+        -webkit-text-fill-color: transparent;
+     }
+
+     .section__padding {
+         padding: 4rem 6rem;  /*padding for top & bottom : 4rem; padding for left & right : 6rem    */
+     }
+     .section__margin {
+        margin: 4rem 6rem;  /*margin for top & bottom : 4rem; margin for left & right : 6rem    */
+    }
+    /* after this we require Custom CSS Animation : TOOLS : Animista.net */
+    
+    /* animista.net => start choose the animation style & click curly paranthesis {..} on right side
+        code will pop out, first copy class & paste in our css file & again go in the site and copy
+        the keyframe code & paste again under the class in css file. */
+
+        .scale-up-center {
+            -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+                    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+
+       /* here are the key frames of css animation style which copied */
+    @-webkit-keyframes scale-up-center {
+    0% {
+         -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+        }
+        100% {
+            -webkit-transform: scale(1);
+                transform: scale(1);
+        }
+    }
+    @keyframes scale-up-center {
+        0% {
+         -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+        }
+        100% {
+             -webkit-transform: scale(1);
+              transform: scale(1);
+        }
+    }
+    /* for tablets margin & padding to media screen*/
+    @media screen and ( max-width: 700px) {
+        .section__margin {
+            margin: 4rem;
+        }
+        .section__padding{
+            padding: 4rem;
+        }
+    }
+    /*  for mobile devices */
+    @media screen and ( max-width: 550px) {
+        .section__margin {
+            margin: 4rem 2rem;
+        }
+        .section__padding{
+            padding: 4rem 2rem;
+        }
+    }
